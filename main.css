@@ -2,7 +2,7 @@ html {
 	height:100%;
 	width:100%;
 	background: url(http://0trpj4m1.apps.lair.io/wp-content/themes/sydney/images/1.jpg) no-repeat
-center center fixed;
+		center center fixed;
 	/*-webkit-filter: grayscale(100%);*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -42,9 +42,9 @@ body {
 }
 
 .jumbotron {
-  position: relative;
-  background-color:transparent;
-  padding-top: 56px;
+	position: relative;
+	background-color:transparent;
+	padding-top: 56px;
 	height:70%;
 	text-align:center;
 	display: flex; /* add */
@@ -53,14 +53,14 @@ body {
 }
 
 .jumbotron .container {
-    font-size: xx-large;
-    text-shadow: 1px 1px black;
-    color: whitesmoke;
-    max-width: 80%;
-    border-radius: 10px;
+	font-size: xx-large;
+	text-shadow: 1px 1px black;
+	color: whitesmoke;
+	max-width: 80%;
+	border-radius: 10px;
 }
 
-.jumbotron a {
+.next-step {
 	background-color:#d65050;
 	border: 1px solid #d65050;
 	font-family: "Raleway", sans-serif;
@@ -73,7 +73,7 @@ body {
 	transition: all 0.3s;
 }
 
-.jumbotron a:hover, a:active{
+.next-step:hover, next-step:active{
 	background-color:transparent;
 	color:#d65050;
 	border: 1px solid #d65050;
@@ -85,14 +85,14 @@ body {
 	padding-bottom: 10px;
 }
 .maintitle::after{
-	  background-color:#d65050;
-		content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 40%;
-    height: 1px;
-    margin-left: -20%;
+	background-color:#d65050;
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 40%;
+	height: 1px;
+	margin-left: -20%;
 }
 
 .subtitle {
@@ -131,13 +131,38 @@ form, input {
 	color: whitesmoke;
 }
 
-.step1-form {
-	margin: 30px 0 0 30px;
+.step1 {
+	margin: 0 0 0 30px;
 	font-size:24px;
 }
 
-.dik-1 {
+.dik {
 	border: none;
 	background: none;
 	outline: none;
+}
+
+.go-next-step {
+	text-align:center;
+	margin-top:60px;
+}
+
+.location {
+
+}
+
+@media (max-width: 767px) {
+	.row {
+		margin-top:10px;
+		content:center;
+	}
+	.col-md-6 {
+		margin-top:10px;
+	}
+	.step1-content{
+		margin: 30px 0 0 30px;
+	}
+	.company-type {
+		margin-top:10px;
+	}
 }

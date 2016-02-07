@@ -127,10 +127,13 @@ a:link, a:visited, a:hover, a:active{
 	align-items: center;
 }
 
-form, input {
+form {
 	color: whitesmoke;
 }
 
+input {
+	color:black;
+}
 .step1 {
 	margin: 0 0 0 30px;
 	font-size:24px;
@@ -147,8 +150,20 @@ form, input {
 	margin-top:60px;
 }
 
-.location {
+#location {
+	color:black;
+}
 
+.subnote {
+	margin: 30px;
+	margin-bottom:-30px;
+	font-size:12px;
+	text-align:center;
+}
+
+.subnote p {
+	margin-left:30%;
+	margin-right:30%;
 }
 
 @media (max-width: 767px) {
@@ -165,4 +180,8 @@ form, input {
 	.company-type {
 		margin-top:10px;
 	}
+	.subnote p {
+	margin-left:10%;
+	margin-right:10%;
+}
 }

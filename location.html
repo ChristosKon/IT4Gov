@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/bower_components/chosen/chosen.min.css" />
+		<link rel="stylesheet" href="main.css"/>
+		<script type="text/javascript" src="main.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<title>Ατομική Εταιρεία - Βήμα 1</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						Υπουργείο Εσωτερικών και <br> Διοικητικής Ανασυγκρότησης
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" id="home-contact">
+						<li><a href="#">Επικοινωνία</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<form name="chosenForm" action="atomiki.html"
+					onsubmit="submitForm(home-loc, work-loc)" method="post">
+			<div class="container-fluid">
+				<div class="row" style="text-align:center;">
+
+					<h1 class="maintitle"> Συμπληρώστε τα παρακάτω στοιχεία</h1></div>
+				<div class="row" style="text-align:center;">
+					<div class="col-md-12">
+						<div class="location">
+							<p>
+								Συμπληρώστε την περιοχή κατοικίας:
+							</p>
+							<select id="home-loc" name="home-loc" style="width:200px;">
+								<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
+								<option value="ΒΟΥΛΑ">Βούλα </option>
+								<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
+								<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
+								<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
+								<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
+								<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
+								<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
+							</select> <br> <br>
+							<p>
+
+								* Συμπληρώστε την μελλοντική έδρα εταιρειας: </p>
+
+							<select id="work-loc" name="work-loc" style="width:200px;">
+								<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
+								<option value="ΒΟΥΛΑ">Βούλα </option>
+								<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
+								<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
+								<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
+								<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
+								<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
+								<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
+
+							</select>
+						</div>
+						<div class="subnote">
+							<p>
+								* Σε περίπτωση που δεν έχετε κάποιo γραφείο να στεγάζεται η εταιρεία, ως έδρα της εταιρείας θα αναφέρετε η κατοικία σας.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="go-next-step">
+					<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
+				</div>
+			</div>
+		</form>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+		<script>
+			$('#work-loc').chosen();
+			$('#home-loc').chosen();
+		</script>
+	</body>
+</html>

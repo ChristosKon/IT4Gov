@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="/bower_components/chosen/chosen.min.css" />
+		<link rel="stylesheet" href="bower_components/chosen/chosen.min.css" />
 		<link rel="stylesheet" href="main.css"/>
 		<script type="text/javascript" src="main.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -26,8 +26,8 @@
 				</div>
 			</div>
 		</nav>
-		<form name="chosenForm" action="atomiki.html"
-					onsubmit="submitForm(home-loc, work-loc)" method="post">
+		<form name="locForm" action="atomiki.html"
+					onsubmit="return submitlocForm()" method="post">
 			<div class="container-fluid">
 				<div class="row" style="text-align:center;">
 

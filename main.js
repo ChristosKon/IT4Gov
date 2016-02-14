@@ -7,16 +7,35 @@ function myFunction(x) {
 }
 
 
-function submitForm(x,y) {
-  alert (x, y);
-/*
-  var http = new XMLHttpRequest();
-  http.open("POST", "<<whereverTheFormIsGoing>>", true);
-  http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  var params = "search=" + "yolo"; // probably use document.getElementById(...).value
-  http.send(params);
-  http.onload = function() {
-    alert(http.responseText);
-  };
-*/
+function submitlocForm() {
+  var home_loc= document.getElementById('home-loc').value;
+  var work_loc= document.getElementById('work-loc').value;
+
+  document.cookie = 'home-loc='+home_loc+'; path=/' ;
+  document.cookie = 'work-loc='+work_loc+'; path=/';
+
+  return true;
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function readloc(){
+  var x = readCookie("home-loc");
+  if (x == "ΖΩΓΡΑΦΟΥ") {
+    document.getElementById('doy').textContent = "Καζαντζάκη 52";
+  }
+  else if (x == "ΗΛΙΟΥΠΟΛΗ"){
+    document.getElementById('doy').textContent = "JD house";
+  }
+  else
+    alert("yolo");
 }

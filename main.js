@@ -37,5 +37,5 @@ function readloc(){
     document.getElementById('doy').textContent = "JD house";
   }
   else
-    alert("yolo");
+    alert("no location");
 }

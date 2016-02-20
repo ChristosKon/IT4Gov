@@ -83,6 +83,7 @@ body {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 10px;
+	margin-left: 10px;
 }
 .maintitle::after{
 	background-color:#d65050;
@@ -166,9 +167,9 @@ input {
 	margin-right:30%;
 }
 
-#map {
-	width:100%;
-	height:500px;
+#fred {
+	width:70%;
+	height:300px;
 }
 
 @media (max-width: 767px) {
@@ -189,4 +190,7 @@ input {
 	margin-left:10%;
 	margin-right:10%;
 }
+	#1-map {
+		margin-left:30px 0 0 30px;
+	}
 }

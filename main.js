@@ -2,40 +2,50 @@ function myFunction(x) {
   existing = typeof existing !== 'undefined' ? existing : 1;
   //alert(x + "+" + existing);
   document.getElementById(existing).style.display = 'none';
+  document.getElementById(existing+"-map").style.display = 'none';
   document.getElementById(x).style.display = 'block';
+  document.getElementById(x+"-map").style.display = 'block';
   existing = x;
 }
 
 
 function submitlocForm() {
   var home_loc= document.getElementById('home-loc').value;
+  var home_street= document.getElementById('home-street').value;
   var work_loc= document.getElementById('work-loc').value;
 
-  document.cookie = 'home-loc='+home_loc+'; path=/' ;
-  document.cookie = 'work-loc='+work_loc+'; path=/';
+  localStorage.setItem("home-loc", home_loc);
+  localStorage.setItem("home-street", home_street);
+  localStorage.setItem("work-loc", work_loc);
 
+  readcsv();
   return true;
 }
 
-function readCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
+function readloc(){
+  var x = localStorage.getItem("doy");
+  document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΔΟΥ+"+x+"&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
 }
 
-function readloc(){
-  var x = readCookie("home-loc");
-  if (x == "ΖΩΓΡΑΦΟΥ") {
-    document.getElementById('doy').textContent = "Καζαντζάκη 52";
-  }
-  else if (x == "ΗΛΙΟΥΠΟΛΗ"){
-    document.getElementById('doy').textContent = "JD house";
-  }
-  else
-    alert("no location");
+
+function readcsv() {
+  $.ajax({
+    url: "doy2.csv",
+    async: false,
+    success: function (csv) {
+      data = $.csv.toObjects(csv);
+      var y = localStorage.getItem("home-street");
+      var matchedRow;
+      for (var i = 0, l = data.length; i < l; i++) {
+        if (data[i]['ΟΔΟΣ'] === y) {
+          matchedRow = data[i];
+          data[i]['Δ.Ο.Υ'] = document.setItem("doy", doy);
+          break;
+        }
+      }
+    },
+    dataType: "text",
+    complete: function(data) {
+    }
+  });
 }

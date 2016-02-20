@@ -12,9 +12,9 @@
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-        window.onload = function(){
-					readloc();
-				}
+			window.onload = function(){
+				readloc();
+			}
 
 		</script>
 		<title>Ατομική Εταιρεία - Βήμα 1</title>
@@ -47,10 +47,9 @@
 						<input type="checkbox" name="dik-3" value="dik-4"><button class="dik" onclick="myFunction(4)">Δικαιολογητικό 4</button>
 					</div>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-4">
 					<div class="step1-content">
 						<div id="1">
-							<div id="map" style="display:none;"></div>
 							lalalalla όλα ειναι όμορφα και μπορείς να τα βρεις στην διεύθυνση: <span id="doy">la</span>
 						</div>
 						<div id="2" style="display:none;">
@@ -64,6 +63,16 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-md-4">
+					<div id="1-map">
+						<div id="map-loc">
+						</div>
+						<iframe id="fred" width="200" height="200"></iframe>
+					</div>
+					<div id="2-map"></div>
+					<div id="3-map"></div>
+					<div id="4-map"></div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="go-next-step">
@@ -71,7 +80,7 @@
 				</div>
 			</div>
 		</div>
-		<!--<script>
+		<script>
 			function initMap() {
 				var mapDiv = document.getElementById('map');
 				var map = new google.maps.Map(mapDiv, {
@@ -81,6 +90,6 @@
 			}
 		</script>
 		<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-						async defer></script> -->
+						async defer></script>
 	</body>
 </html>

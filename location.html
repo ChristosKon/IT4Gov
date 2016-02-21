@@ -7,9 +7,15 @@
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="bower_components/chosen/chosen.min.css" />
 		<link rel="stylesheet" href="main.css"/>
-		<script type="text/javascript" src="main.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="bower_components/jquery-csv/src/jquery.csv.js"></script>
+		<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function(e) {
+																readcsv();
+			})
+		</script>
 		<title>Ατομική Εταιρεία - Βήμα 1</title>
 	</head>
 	<body>
@@ -39,27 +45,11 @@
 							<p>
 								Συμπληρώστε την διεύθυνση και την περιοχή κατοικίας σας:
 							</p>
-							<select data-placeholder="Διεύθυνση" id="home-street" name="home-street" style="width:200px;">
-								<option value="none">  </option>
-								<option value="ΑΒΑΝΤΩΝ"> Αβάντων </option>
-								<option value="ΒΟΥΛΑ">Βούλα </option>
-								<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
-								<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
-								<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
-								<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
-								<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
-								<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
-							</select>
 							<select data-placeholder="Περιοχή" id="home-loc" name="home-loc" style="width:200px;">
-								<option value="ΑΡΓΥΡΟΥΠΟΛΗ"> </option>
-								<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
-								<option value="ΒΟΥΛΑ">Βούλα </option>
-								<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
-								<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
-								<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
-								<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
-								<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
-								<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
+								<option value="none"> </option>
+							</select>
+							<select data-placeholder="Διεύθυνση" id="home-street" name="home-street" style="width:200px;">
+<option value="none"> </option>
 							</select> <br> <br>
 							<p>
 
@@ -92,11 +82,9 @@
 			</div>
 		</form>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="bower_components/chosen/chosen.jquery.min.js"></script>
 		<script>
 			$('#work-loc').chosen();
 			$('#home-loc').chosen();
-			$('#home-street').chosen();
 		</script>
 	</body>
 </html>

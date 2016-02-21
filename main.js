@@ -18,7 +18,6 @@ function submitlocForm() {
   localStorage.setItem("home-street", home_street);
   localStorage.setItem("work-loc", work_loc);
 
-  readcsv();
   return true;
 }
 
@@ -27,14 +26,42 @@ function readloc(){
   document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΔΟΥ+"+x+"&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
 }
 
+function addoptions() {
+
+}
+
 
 function readcsv() {
   $.ajax({
     url: "doy2.csv",
-    async: false,
     success: function (csv) {
-      data = $.csv.toObjects(csv);
-      var y = localStorage.getItem("home-street");
+      var data = $.csv.toObjects(csv),
+          select = $('#home-street'),
+          streetToDOYMap = data.reduce(function(previousValue, currentValue, currentIndex, array) {
+            if (!previousValue[currentValue['ΟΔΟΣ']]) {
+              previousValue[currentValue['ΟΔΟΣ']] = [];
+              previousValue[currentValue['ΟΔΟΣ']].push(currentValue['Δ.Ο.Υ.']);
+            } else{
+              previousValue[currentValue['ΟΔΟΣ']].push(currentValue['Δ.Ο.Υ.']);
+            }
+            return previousValue;
+          } );
+
+      for (var key in streetToDOYMap) {
+        var opt = document.createElement('option');
+        opt.value = key;
+        opt.innerHTML = key;
+        select.append(opt);
+      }
+      select.chosen();
+    },
+    dataType: "text",
+    complete: function(data) {
+    }
+  });
+}
+
+/*  var y = localStorage.getItem("home-street");
       var matchedRow;
       for (var i = 0, l = data.length; i < l; i++) {
         if (data[i]['ΟΔΟΣ'] === y) {
@@ -43,9 +70,4 @@ function readcsv() {
           break;
         }
       }
-    },
-    dataType: "text",
-    complete: function(data) {
-    }
-  });
-}
+*/

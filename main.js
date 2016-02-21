@@ -61,6 +61,42 @@ function readcsv() {
   });
 }
 
+function findaddress() {
+  var address = document.getElementById("roadform").elements[0].value;
+
+  document.getElementById("address-results").innerHTML = address.toUpperCase();
+
+  $.ajax({
+    url: "doy2.csv",
+    success: function (csv) {
+      var data = $.csv.toObjects(csv),
+          select = $('#home-street'),
+          streetToDOYMap = data.reduce(function(previousValue, currentValue, currentIndex, array) {
+            if (!previousValue[currentValue['ΟΔΟΣ']]) {
+              previousValue[currentValue['ΟΔΟΣ']] = [];
+              previousValue[currentValue['ΟΔΟΣ']].push(currentValue['Δ.Ο.Υ.']);
+            } else{
+              previousValue[currentValue['ΟΔΟΣ']].push(currentValue['Δ.Ο.Υ.']);
+            }
+            return previousValue;
+          } );
+
+      for (var key in streetToDOYMap) {
+        if (key === address){
+          document.getElementById("address-results").innerHTML += address;
+        }
+        var opt = document.createElement('option');
+        opt.value = key;
+        opt.innerHTML = key;
+        select.append(opt);
+      }
+      select.chosen();
+    },
+    dataType: "text",
+    complete: function(data) {
+    }
+  });
+}
 /*  var y = localStorage.getItem("home-street");
       var matchedRow;
       for (var i = 0, l = data.length; i < l; i++) {

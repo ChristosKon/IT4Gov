@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded', function(e) {
-																readcsv();
+				readcsv();
 			})
 		</script>
 		<title>Ατομική Εταιρεία - Βήμα 1</title>
@@ -33,56 +33,55 @@
 				</div>
 			</div>
 		</nav>
-		<form name="locForm" action="atomiki.html"
-					onsubmit="return submitlocForm()" method="post">
-			<div class="container-fluid">
-				<div class="row" style="text-align:center;">
+		<div class="container-fluid">
+			<div class="row" style="text-align:center;">
 
-					<h1 class="maintitle"> Συμπληρώστε τα παρακάτω στοιχεία</h1></div>
-				<div class="row" style="text-align:center;">
-					<div class="col-md-12">
-						<div class="location">
-							<p>
-								Συμπληρώστε την διεύθυνση και την περιοχή κατοικίας σας:
-							</p>
-							<select data-placeholder="Διεύθυνση" id="home-street" name="home-street" style="width:200px;">
-<option value="none"> </option>
-							</select>
-							<select data-placeholder="Περιοχή" id="home-loc" name="home-loc" style="width:200px;">
-								<option value="none"> </option>
-							</select><br> <br>
-							<p>
+				<h1 class="maintitle"> Συμπληρώστε τα παρακάτω στοιχεία</h1></div>
+			<div class="row" style="text-align:center;">
+				<div class="col-md-12">
+					<p>
+						Συμπληρώστε την οδό κατοικίας σας (χωρίς τόνους):
+					</p>
+					<form id="roadform" onsubmit="findaddress(); return false;" method="post">
+						<input type="text" name="road-name" placeholder="πχ. ΚΑΖΑΝΤΖΑΚΗ"><br><br>
+						<input type="submit" value="Έτοιμη">
+					</form>
+					<div id="address-results"></div>
+					<form name="locForm" action="atomiki.html"
+								onsubmit="return submitlocForm()" method="post">
+						<p>
+							* Συμπληρώστε την μελλοντική έδρα εταιρειας: </p>
 
-								* Συμπληρώστε την μελλοντική έδρα εταιρειας: </p>
+						<select id="work-loc" name="work-loc" style="width:200px;">
+							<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
+							<option value="ΒΟΥΛΑ">Βούλα </option>
+							<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
+							<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
+							<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
+							<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
+							<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
+							<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
 
-							<select id="work-loc" name="work-loc" style="width:200px;">
-								<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
-								<option value="ΒΟΥΛΑ">Βούλα </option>
-								<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
-								<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
-								<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
-								<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
-								<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
-								<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
+						</select>
 
-							</select>
-						</div>
 						<div class="subnote">
 							<p>
 								* Σε περίπτωση που δεν έχετε κάποιo γραφείο να στεγάζεται η εταιρεία, ως έδρα της εταιρείας θα αναφέρετε η κατοικία σας.
 							</p>
 						</div>
-					</div>
+
+
+
+						<div class="row">
+							<div class="go-next-step">
+								<a href="/business-type.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+								<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="row">
-				<div class="go-next-step">
-					<a href="/business-type.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
-					<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
-				</div>
-			</div>
-		</form>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		</div>				<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script>
 			$('#work-loc').chosen();
 			$('#home-loc').chosen();

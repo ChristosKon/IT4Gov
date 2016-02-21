@@ -79,6 +79,25 @@ body {
 	border: 1px solid #d65050;
 }
 
+.previous-step {
+	background-color:transparent;
+	font-family: "Raleway", sans-serif;
+	font-size:12px;
+	line-height: 24px;
+	font-weight: 700;
+	padding: 12px 35px;
+	color: #fff;
+	text-transform: uppercase;
+	transition: all 0.3s;
+}
+
+.previous-step:hover, next-step:active{
+	background-color:transparent;
+	color:#d65050;
+	border: 1px solid #d65050;
+}
+
+
 .maintitle {
 	display: inline-block;
 	position: relative;

@@ -13,7 +13,17 @@
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded', function(e) {
-				readcsv();
+				var skbutton = document.querySelector('#skbutton');
+				skbutton.addEventListener('click', findaddress);
+				window.CSVTable = null;
+
+				$.ajax({
+					url: "doy3.csv",
+					success: function (csv) {
+						window.CSVTable = $.csv.toObjects(csv);
+						$('#skbutton').prop('disabled', false);
+					}
+				});
 			})
 		</script>
 		<title>Ατομική Εταιρεία - Βήμα 1</title>
@@ -42,11 +52,11 @@
 					<p>
 						Συμπληρώστε την οδό κατοικίας σας (χωρίς τόνους):
 					</p>
-					<form id="roadform" onsubmit="findaddress(); return false;" method="post">
-						<input type="text" name="road-name" placeholder="πχ. ΚΑΖΑΝΤΖΑΚΗ"><br><br>
-						<input type="submit" value="Έτοιμη">
-					</form>
-					<div id="address-results"></div>
+					<div id="roadform">
+						<input type="text" name="road-name" id="road-name" placeholder="πχ. ΚΑΖΑΝΤΖΑΚΗ">
+						<button disabled id="skbutton" class="btn">Έτοιμη</button>
+					</div>
+					<select id="address-results" name="address-results"></select>
 					<form name="locForm" action="atomiki.html"
 								onsubmit="return submitlocForm()" method="post">
 						<p>

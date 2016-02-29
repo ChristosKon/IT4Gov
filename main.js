@@ -116,3 +116,21 @@ $(document).ajaxStart(function(){
 $(document).ajaxComplete(function(){
   $("#loadingDiv").css("visibility", "hidden");
 });
+
+
+function no_upload(){
+  alert ("Για λόγους ασφαλείας του demo δεν λειτουργεί το ανέβασμα αρχείων.");
+}
+
+function randnumb(){
+  var x = document.getElementById("proto").innerHTML;
+  if (x === ""){
+    var y = Math.floor((Math.random() * 10000000000) + 1);
+    document.getElementById("proto").innerHTML = (y);
+  }
+}
+
+function myalert(){
+  alert("Στάλθηκε!");
+  return false;
+}

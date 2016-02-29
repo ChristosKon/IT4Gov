@@ -1,62 +1,114 @@
-
-
 function myFunction(x) {
   existing = typeof existing !== 'undefined' ? existing : 1;
   //alert(x + "+" + existing);
   document.getElementById(existing).style.display = 'none';
-  document.getElementById(existing+"-map").style.display = 'none';
+  //document.getElementById(existing+"-map").style.display = 'none';
   document.getElementById(x).style.display = 'block';
-  document.getElementById(x+"-map").style.display = 'block';
+  //document.getElementById(x+"-map").style.display = 'block';
+  if (x === 2){
+    var y = localStorage.getItem("edra");
+    if (y === "ΙΔΙΟΚΤΗΤΟ") {
+      document.getElementById('edra-yours').style.display = 'block';
+    }
+    else if (y=== "ΔΩΡΕΑΝ") {
+      document.getElementById('edra-dorean').style.display = 'block';
+    }
+    else if (y === "ΕΝΟΙΚΙΟ") {
+      document.getElementById('edra-enoikio').style.display = 'block';
+    }
+    else {
+      document.getElementById('edra-yours').style.display = 'block';
+      document.getElementById('edra-dorean').style.display = 'block';
+      document.getElementById('edra-enoikio').style.display = 'block';
+    }
+  }
   existing = x;
 }
 
 
 function submitlocForm() {
-  var home_loc= document.getElementById('home-loc').value;
-  var home_street= document.getElementById('home-street').value;
-  var work_loc= document.getElementById('work-loc').value;
+  var address_results= document.getElementById('address-results').value;
+  var job = document.getElementById('job').value;
+  var edra = document.getElementById('edra').value;
+  var tk = document.getElementById('tk').value;
 
-  localStorage.setItem("home-loc", home_loc);
-  localStorage.setItem("home-street", home_street);
-  localStorage.setItem("work-loc", work_loc);
+  localStorage.setItem("address-results", address_results);
+  localStorage.setItem("job", job);
+  localStorage.setItem("edra", edra);
+  localStorage.setItem("tk", tk);
 
-  return true;
+  if (address_results === "" && job === "none"){
+    alert("\n Δεν έχετε επιλέξει: \n\n" + "\t• την οδό της έδρας σας \n" + "\t• το επάγγελμά σας.\n\n" + "Παρακαλώ επιλέξτε για να συνεχίσετε.\n\n");
+    return false;
+  }
+  else if (address_results === ""){
+    alert("\n Δεν έχετε επιλέξει: \n\n" + "\t• την οδό της έδρας σας \n\n" + "Παρακαλώ επιλέξτε για να συνεχίσετε.\n\n");
+    return false;
+  }
+  else if (job === "none"){
+    alert("\n Δεν έχετε επιλέξει: \n\n" + "\t• τo επάγγελμά σας \n\n" + "Παρακαλώ επιλέξτε για να συνεχίσετε.\n\n");
+    return false;
+  }
+  else {
+    return true;
+  }
 }
 
-function readloc(){
-  var x = localStorage.getItem("doy");
+function readloc() {
+  var x = localStorage.getItem("address-results");
   document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΔΟΥ+"+x+"&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
 }
 
-function addoptions() {
+function readtk() {
+  var x = localStorage.getItem("tk");
+  if(typeof x === 'undefined'){
+    window.frames[0].document.body.innerHTML = "Δεν μπορεί να εμφανιστεί ο χάρτης καθώς δεν έχετε επιλέξει ΤΚ της έδρας της εταιρείας στην 'Φόρμα στοιχείων'.";
+  }
+  else if (x === "15772"){
+    document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=OΑΕΕ+Σύνταγμα&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+  }
+  else if (x === "16342") {
+    document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΟΑΕΕ+ΔΑΦΝΗΣ&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+  }
+}
 
+function readepimelitirio() {
+  document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Επαγγελματικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+}
+
+function normalizeGreek(text) {
+  text = text.replace(/Ά|Α|ά/g,'Α');
+  text = text.replace(/Έ|Ε|έ/g,'Ε');
+  text = text.replace(/Ή|Η|ή/g,'Η');
+  text = text.replace(/Ί|Ϊ|Ι|ί|ΐ|ϊ/g,'Ι');
+  text = text.replace(/Ό|Ο|ό/g,'Ο');
+  text = text.replace(/Ύ|Ϋ|Υ|ύ|ΰ|ϋ/g,'Υ');
+  text = text.replace(/Ώ|Ω|ώ/g,'Ω');
+  text = text.replace(/Σ|ς/g,'Σ');
+  return text;
 }
 
 function findaddress() {
-  var address = document.getElementById("road-name").value.toUpperCase(),
-      select = $('#home-street'),
+  var address = normalizeGreek(document.getElementById("road-name").value.toUpperCase()),
       data = window.CSVTable,
       results = $("#address-results"),
       contents = '';
 
-
   for (var i = 0, l = data.length; i < l; i++) {
     if (data[i]['ΟΔΟΣ'] === address) {
-      contents += '<option value="' + data[i]['Δ.Ο.Υ.'] + '">' + data[i]['ΟΔΟΣ'] + ' ' + data[i]['ΠΕΡΙΟΧΗ'] + ' ' + data[i]['Δ.Ο.Υ.'] + '</option><br />';
+      contents += '<option value="' + data[i]['Δ.Ο.Υ.'] + '">' + data[i]['ΟΔΟΣ'] + ', ' + data[i]['ΠΕΡΙΟΧΗ'] + '</option><br />';
     }
   }
   results.html(contents);
+  results.chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+  results.trigger("chosen:updated");
+  document.getElementById("address-results").style.visibility = 'visible';
 
- // results.chosen();
 }
 
-/*  var y = localStorage.getItem("home-street");
-      var matchedRow;
-      for (var i = 0, l = data.length; i < l; i++) {
-        if (data[i]['ΟΔΟΣ'] === y) {
-          matchedRow = data[i];
-          data[i]['Δ.Ο.Υ'] = document.setItem("doy", doy);
-          break;
-        }
-      }
-*/
+$(document).ajaxStart(function(){
+  $("#loadingDiv").css("visibility", "visible");
+});
+$(document).ajaxComplete(function(){
+  $("#loadingDiv").css("visibility", "hidden");
+});

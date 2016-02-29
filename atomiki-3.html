@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="main.css"/>
-		<script type="text/javascript" src="jquery-1.8.3.js"></script>
-		<script type="text/javascript" src="main.js"></script>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<link rel="stylesheet" href="/resources/demos/style.css">
 		<meta charset="UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ατομική Εταιρεία - Βήμα 1</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="main.css"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				readloc();
+			}
+
+		</script>
+		<title>Ατομική Εταιρεία - Βήμα 3</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -24,46 +29,101 @@
 				</div>
 				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right" id="home-contact">
-						<li><a href="#">Επικοινωνία</a></li>
+						<li><a href="/contact.html">Επικοινωνία</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 		<div class="container-fluid">
 			<div class="row">
-
-				<h1 class="maintitle"> Ατομική Εταιρεία - Βήμα 3</h1></div>
+				<h1 class="maintitle"> ΔΟΥ - Δικαιολογητικά (3/6)</h1>
+			<ol class="breadcrumb mybreadcrump">
+					<li><a href="/location.html">Φόρμα Στοιχείων</a></li>
+				<li><a href="/atomiki.html">Επιμελητήριο</a></li>
+				<li><a href="/atomiki-2.html">ΟΑΕΕ</a></li>
+					<li class="active">ΔΟΥ</li>
+				</ol></div>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="step1">
-						<input type="checkbox" name="dik-1" value="dik-1"><button class="dik" onclick="myFunction(1)"> Δικαιολογητικό 1</button><br>
-						<input type="checkbox" name="dik-2" value="dik-2"><button class="dik" onclick="myFunction(2)"> Δικαιολογητικό 2</button><br>
-						<input type="checkbox" name="dik-3" value="dik-3"><button class="dik" onclick="myFunction(3)"> Δικαιολογητικό 3</button><br>
-						<input type="checkbox" name="dik-3" value="dik-4"><button class="dik" onclick="myFunction(4)">Δικαιολογητικό 4</button>
+						<button class="dik" onclick="myFunction(1)"> Φωτοτυπία ταυτότητας</button><br>
+						<button class="dik-edras" onclick="myFunction(2)"> Δικαιολογητικά έδρας</button><br>
+						<button class="dik" onclick="myFunction(3)"> Βεβαίωση προεγγραφής </button><br>
+						<button class="dik" onclick="myFunction(4)"> Προσωρινή βεβαίωση </button><br>
+						<button class="dik" onclick="myFunction(5)"> Δήλωση έναρξης εργασιών Μ2 </button><br><br>
+						<button class="dik" onclick="myFunction(6)"> Θα παραλάβετε</button><br>
 					</div>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-4 step-content">
 					<div class="step1-content">
 						<div id="1">
-							Στοιχεία δικαιολογητικού 1, το δικαιολογητικό 1 γαμάει και δέρνει.
+							Πέντε απλά φωτοαντίγραφα της Αστυνομικής σας ταυτότητας (εμπρός – πίσω).
 						</div>
 						<div id="2" style="display:none;">
-							Στοιχεία δικαιολογητικού 2, και το 2 δεν πάει πίσω.
+									<p id="edra-yours" style="display:none;">
+										Δύο απλά φωτοαντίγραφα του Ε9 όπου έχει δηλωθεί η κατοικία.
+							</p>
+									<p id="edra-dorean" style="display:none;">Αν ο γονέας σας παραχωρεί μέρος της ιδιόκτητης κατοικίας του:  Υπεύθυνη Δήλωση του Ν. 1599/86 του γονέα, εις διπλούν, επικυρωμένες από ΚΕΠ ή Αστυνομικό Τμήμα και δύο  απλά φωτοαντίγραφα του  Ε9 όπου  έχει  δηλωθεί η κατοικία.
+									</p>
+									<p id="edra-enoikio" style="display:none;">Αν νοικιάζετε: Δύο φωτοαντίγραφα του μισθωτηρίου συμβολαίου, θεωρημένα από την εφορία.</p>
 						</div>
 						<div id="3" style="display:none;">
-							Στοιχεία δικαιολογητικού 3, το 3 θα σε τρελάνει.
+							<p></p>
 						</div>
 						<div id="4" style="display:none;">
-							Στοιχεία δικαιολογητικού 4, το 4 ειναι καταπληκτικό.
+							<p>(Παραλαμβάνεται από τον ΟΑΕΕ στο προηγούμενο βήμα)</p>
+							<p>Προσωρινή Βεβαίωση απογραφικής Δήλωσης στον ΟΑΕΕ</p>
 						</div>
+						<div id="5" style="display:none;">
+							<p>
+							Μπορείτε να βρείτε την δήλωση έναρξης εργασιών M2 <a href="http://www.gsis.gr/gsis/export/sites/default/gsis_site/Services/Polites/documents_e_entipa_2/M2.pdf" target="_blank">εδώ</a>. Συνίσταται να την εκτυπώσετε και να την έχετε συμπληρωμένη πριν πάτε στην ΔΟΥ.
+							</p>
+						</div>
+						<div id="6" style="display:none;">
+								<ul>
+									<li>
+										<p>Δήλωση Εργασιών Μ2/TAXIS
+										</p>
+									</li>
+									<li>
+										<p>Βεβαίωση Μεταβολής ΑΣ</p>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="map">
+						<iframe id="fred" width="200" height="200"></iframe>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="go-next-step">
-					<a href="/atomiki-4.html" class="btn next-step">ΕΠΟΜΕΝΟ ΒΗΜΑ</a>
+					<p>
+						<a href="/atomiki-2.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+						<a href="/atomiki-4.html" class="btn next-step">ΕΠΟΜΕΝΟ ΒΗΜΑ</a>					</p>
+					<ol class="pagination pagination-sm mypagination">
+					<li><a href="atomiki.html">Επιμελητήριο-1</a></li>
+					<li><a href="atomiki-2.html">ΟΑΕΕ-1</a></li>
+					<li><a href="atomiki-3.html">ΔΟΥ-1</a></li>
+					<li><a href="atomiki-4.html">Επιμελητήριο-2</a></li>
+					<li><a href="atomiki-5.html">ΟΑΕΕ-2</a></li>
+					<li><a href="atomiki-6.html" style="border:none;">ΔΟΥ-2</a></li>
+				</ol>
 				</div>
 			</div>
 		</div>
+		<script>
+			function initMap() {
+				var mapDiv = document.getElementById('map');
+				var map = new google.maps.Map(mapDiv, {
+					center: {lat: 44.540, lng: -78.546},
+					zoom: 8
+				});
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+						async defer></script>
 	</body>
 </html>

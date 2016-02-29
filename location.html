@@ -26,7 +26,7 @@
 				});
 			})
 		</script>
-		<title>Ατομική Εταιρεία - Βήμα 1</title>
+		<title>Στοιχεία</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -45,56 +45,70 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row" style="text-align:center;">
-
 				<h1 class="maintitle"> Συμπληρώστε τα παρακάτω στοιχεία</h1></div>
 			<div class="row" style="text-align:center;">
 				<div class="col-md-12">
+					<div class="edra">
+					<p>Η έδρα της εταιρείας θα είναι:</p>
+						<select name="edra" id="edra" style="width:300px;" data-placeholder="Ιδιοκτησία έδρας">
+							<option value="none"></option>
+							<option value="ΙΔΙΟΚΤΗΤΟ"> Σε ιδιόκτητο χώρο/κτήριο</option>
+							<option value="ΔΩΡΕΑΝ"> Σε χώρο που μου έχουν παραχωρήσει δωρεάν</option>
+							<option value="ΕΝΟΙΚΙΟ"> Σε χώρο τον οποίο νοικιάζω</option>
+						</select>
+					</div>
+					<div class="tk">
+					<p>Ο Ταχυδρομικός Κώδικας της έδρας της εταιρείας θα είναι:</p>
+						<select name="tk" id="tk" style="width:300px;" data-placeholder="Ταχυδρομικός Κώδικας">
+							<option value="none"></option>
+							<option value="15772"> 15772</option>
+							<option value="16342"> 16342</option>
+						</select>
+					</div>
+					<div class="job">
+						<p>Η ειδικότητά σας:</p>
+						<select name="job" id="job" style="width:300px;" data-placeholder="Επιλέξτε ειδικότητα">
+							<option value="none"></option>
+							<option value="ΓΙΑΤΡΟΣ"> Γιατρός</option>
+							<option value="ΜΗΧΑΝΙΚΟΣ"> Μηχανικός</option>
+						</select>
+					</div>
 					<p>
-						Συμπληρώστε την οδό κατοικίας σας (χωρίς τόνους):
+						Η οδός της έδρας της εταιρείας θα είναι *:
 					</p>
 					<div id="roadform">
 						<input type="text" name="road-name" id="road-name" placeholder="πχ. ΚΑΖΑΝΤΖΑΚΗ">
-						<button disabled id="skbutton" class="btn">Έτοιμη</button>
+						<button disabled id="skbutton" class="btn">Έτοιμo</button>
+					<div id="loadingDiv" style="visibility:hidden;width:59px;height:59px;display:initial;"><img src="loading.svg" width="34" height="34" /><br>Loading...</div>
 					</div>
-					<select id="address-results" name="address-results"></select>
-					<form name="locForm" action="atomiki.html"
-								onsubmit="return submitlocForm()" method="post">
+					<br />
+					<div>
+						<select id="address-results" name="address-results" style="width:300px; visibility:hidden;"></select>
+					</div>
+					<div class="subnote">
 						<p>
-							* Συμπληρώστε την μελλοντική έδρα εταιρειας: </p>
-
-						<select id="work-loc" name="work-loc" style="width:200px;">
-							<option value="ΑΡΓΥΡΟΥΠΟΛΗ">Αργυρούπολη </option>
-							<option value="ΒΟΥΛΑ">Βούλα </option>
-							<option value="ΒΟΥΛΙΑΓΜΕΝΗ"> Βουλιαγμένη </option>
-							<option value="ΒΡΙΛΗΣΣΙΑ"> Βριλήσσια </option>
-							<option value="ΓΛΥΦΑΔΑ"> Γλυφάδα </option>
-							<option value="ΖΩΓΡΑΦΟΥ"> Ζωγράφου </option>
-							<option value="ΗΛΙΟΥΠΟΛΗ"> Ηλιούπολη</option>
-							<option value="ΧΑΛΑΝΔΡΙ"> Χαλάνδρι </option>
-
-						</select>
-
-						<div class="subnote">
-							<p>
-								* Σε περίπτωση που δεν έχετε κάποιo γραφείο να στεγάζεται η εταιρεία, ως έδρα της εταιρείας θα αναφέρετε η κατοικία σας.
-							</p>
-						</div>
-
-
-
-						<div class="row">
-							<div class="go-next-step">
-								<a href="/business-type.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
-								<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
-							</div>
-						</div>
-					</form>
+							* Σε περίπτωση που δεν έχετε κάποιo γραφείο να στεγάζεται η εταιρεία, ως έδρα της εταιρείας θα αναφέρετε η κατοικία σας.
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>				<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+			<form name="locForm" action="atomiki.html"
+						onsubmit="return submitlocForm()" method="post">
+				<div class="row" style="text-align:center;">
+				</div>
+				<div class="row">
+					<div class="go-next-step">
+						<a href="/business-type.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+						<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script>
-			$('#work-loc').chosen();
-			$('#home-loc').chosen();
+			$('#edra').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+			$('#tk').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+			$('#job').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
 		</script>
 	</body>
 </html>

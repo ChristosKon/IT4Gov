@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript">
 			window.onload = function(){
-				readloc();
+				readepimelitirio();
 			}
 
 		</script>
@@ -36,42 +36,53 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row">
-
-				<h1 class="maintitle"> Ατομική Εταιρεία - Βήμα 1</h1></div>
+				<h1 class="maintitle"> Επιμελητήριο - Δικαιολογητικά (1/6)</h1>
+			<ol class="breadcrumb mybreadcrump">
+					<li><a href="/location.html">Φόρμα Στοιχείων</a></li>
+					<li class="active">Επιμελητήριο</li>
+				</ol>
+			</div>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="step1">
-						<input type="checkbox" name="dik-1" value="dik-1"><button class="dik" onclick="myFunction(1)"> Δικαιολογητικό 1</button><br>
-						<input type="checkbox" name="dik-2" value="dik-2"><button class="dik" onclick="myFunction(2)"> Δικαιολογητικό 2</button><br>
-						<input type="checkbox" name="dik-3" value="dik-3"><button class="dik" onclick="myFunction(3)"> Δικαιολογητικό 3</button><br>
-						<input type="checkbox" name="dik-3" value="dik-4"><button class="dik" onclick="myFunction(4)">Δικαιολογητικό 4</button>
+						<button class="dik" onclick="myFunction(1)"> Φωτοτυπία Ταυτότητα</button><br>
+						<button class="dik-edras" onclick="myFunction(2)"> Δικαιολογητικά Έδρας</button><br><br>
+						<button class="dik" onclick="myFunction(3)"> Θα παραλάβετε</button><br>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 step-content">
 					<div class="step1-content">
 						<div id="1">
-							lalalalla όλα ειναι όμορφα και μπορείς να τα βρεις στην διεύθυνση: <span id="doy">la</span>
+							Πέντε απλά φωτοαντίγραφα της Αστυνομικής σας ταυτότητας (εμπρός – πίσω).
 						</div>
 						<div id="2" style="display:none;">
-							Στοιχεία δικαιολογητικού 2, και το 2 δεν πάει πίσω.
+									<p id="edra-yours" style="display:none;">
+										Δύο απλά φωτοαντίγραφα του Ε9 όπου έχει δηλωθεί η κατοικία.
+							</p>
+									<p id="edra-dorean" style="display:none;">Αν ο γονέας σας παραχωρεί μέρος της ιδιόκτητης κατοικίας του:  Υπεύθυνη Δήλωση του Ν. 1599/86 του γονέα, εις διπλούν, επικυρωμένες από ΚΕΠ ή Αστυνομικό Τμήμα και δύο  απλά φωτοαντίγραφα του  Ε9 όπου  έχει  δηλωθεί η κατοικία.
+									</p>
+									<p id="edra-enoikio" style="display:none;">Αν νοικιάζετε: Δύο φωτοαντίγραφα του μισθωτηρίου συμβολαίου, θεωρημένα από την εφορία.</p>
 						</div>
 						<div id="3" style="display:none;">
-							Στοιχεία δικαιολογητικού 3, το 3 θα σε τρελάνει.
-						</div>
-						<div id="4" style="display:none;">
-							Στοιχεία δικαιολογητικού 4, yolo ρε, τελειώνεις.
+							<ul>
+								<li>
+									<p>Βεβαίωση/Θεώρηση Προεγγραφής -	Ανάλογα με το επάγγελμα που θα εξασκήσετε, απαιτείται και η εγγραφή στο αντίστοιχο επιμελητήριο
+									</p>
+								</li>
+								<li>
+									<p>Απαλλαγή -	Ορισμένα επαγγέλματα δεν υπάγονται σε κάποιο επιμελητήριο. Μπορείτε να ζητήσετε απαλλαγή από το εμπορικό-βιομηχανικό επιμελητήριο.</p>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div id="1-map">
-						<div id="map-loc">
-						</div>
+					<div class="map">
+						<p>
+							Τμήμα: "Nέων εγγραφών"
+						</p>
 						<iframe id="fred" width="200" height="200"></iframe>
 					</div>
-					<div id="2-map"></div>
-					<div id="3-map"></div>
-					<div id="4-map"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -79,6 +90,14 @@
 					<p>
 						<a href="/location.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
 						<a href="/atomiki-2.html" class="btn next-step">ΕΠΟΜΕΝΟ ΒΗΜΑ</a>					</p>
+					<ol class="pagination pagination-sm mypagination">
+					<li><a href="atomiki.html">Επιμελητήριο-1</a></li>
+					<li><a href="atomiki-2.html">ΟΑΕΕ-1</a></li>
+					<li><a href="atomiki-3.html">ΔΟΥ-1</a></li>
+					<li><a href="atomiki-4.html">Επιμελητήριο-2</a></li>
+					<li><a href="atomiki-5.html">ΟΑΕΕ-2</a></li>
+					<li><a href="atomiki-6.html" style="border:none;">ΔΟΥ-2</a></li>
+				</ol>
 				</div>
 			</div>
 		</div>

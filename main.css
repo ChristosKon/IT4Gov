@@ -1,7 +1,9 @@
 html {
 	height:100%;
 	width:100%;
-	background: url(http://0trpj4m1.apps.lair.io/wp-content/themes/sydney/images/1.jpg) no-repeat
+	background: url(office-background-large.jpg) no-repeat
+		/*link for the background image https://pixabay.com/en/office-tax-business-finance-620822/. Thanks pixabay
+		https://pixabay.com/static/uploads/photo/2015/02/02/11/09/office-620822_960_720.jpg */
 		center center fixed;
 	/*-webkit-filter: grayscale(100%);*/
 	-webkit-background-size: cover;
@@ -97,6 +99,10 @@ body {
 	border: 1px solid #d65050;
 }
 
+#skbutton {
+	background-color:#d65050;
+	color: #fff;
+}
 
 .maintitle {
 	display: inline-block;
@@ -104,6 +110,46 @@ body {
 	padding-bottom: 10px;
 	margin-left: 10px;
 }
+
+.mybreadcrump {
+	background-color:transparent;
+}
+
+.mybreadcrump li a {
+	color: #fff !important;
+	background: transparent;
+}
+
+.mybreadcrump li a:hover {
+	color: #d65050 !important;
+}
+
+.mybreadcrump .active {
+	color: #d65050 !important;
+}
+
+.mypagination {
+	background-color:transparent;
+	margin-top:30px;
+}
+
+.mypagination li a {
+	color: #fff !important;
+	background: transparent;
+	border:none;
+	border-right:1px solid;
+}
+
+.mypagination li a:hover {
+	color: #d65050 !important;
+	background-color: #fff;
+}
+
+.mypagination .active {
+	color: #d65050 !important;
+}
+
+
 .maintitle::after{
 	background-color:#d65050;
 	content: "";
@@ -120,7 +166,7 @@ body {
 }
 
 .row {
-	margin-top:30px;
+	margin-top:10px;
 
 }
 
@@ -159,10 +205,15 @@ input {
 	font-size:24px;
 }
 
-.dik {
+.dik, .dik-edras {
 	border: none;
 	background: none;
 	outline: none;
+}
+
+.dik:hover, .dik-edras:hover {
+	background-color:transparent;
+	color:#d65050;
 }
 
 .go-next-step {
@@ -175,7 +226,7 @@ input {
 }
 
 .subnote {
-	margin: 30px;
+	margin-top:10px;
 	margin-bottom:-30px;
 	font-size:12px;
 	text-align:center;
@@ -191,6 +242,30 @@ input {
 	height:300px;
 }
 
+.job {
+	margin:25px 0 25px 0;
+}
+
+.step-content {
+	margin-top: 10px;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 15px;
+	text-align: justify;
+}
+
+.step1-content {
+	margin: 10px 0 10px 0;
+}
+
+.map {
+	text-align: center;
+	font-size: 15px;
+}
+
+.tk {
+	margin-top:25px;
+}
+
 @media (max-width: 767px) {
 	.row {
 		margin-top:10px;
@@ -202,14 +277,17 @@ input {
 	.step1-content{
 		margin: 30px 0 0 30px;
 	}
+	.step-content {
+		margin-top:10px;
+	}
 	.company-type {
 		margin-top:10px;
 	}
 	.subnote p {
-	margin-left:10%;
-	margin-right:10%;
-}
-	#1-map {
-		margin-left:30px 0 0 30px;
+		margin-left:10%;
+		margin-right:10%;
+	}
+	.map {
+		margin:30px 0 0 30px;
 	}
 }

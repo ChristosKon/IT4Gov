@@ -170,6 +170,10 @@ body {
 
 }
 
+.home-contact li a:hover {
+	color: #d65050 !important;
+}
+
 .company-type {
 	min-height: 200px;
 	background-color: rgba(0,0,0,0.5);

@@ -76,6 +76,10 @@ function readepimelitirio() {
   document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Επαγγελματικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
 }
 
+function readgemh() {
+  document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Εμπορικό+και+Βιομηχανικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+}
+
 function normalizeGreek(text) {
   text = text.replace(/Ά|Α|ά/g,'Α');
   text = text.replace(/Έ|Ε|έ/g,'Ε');

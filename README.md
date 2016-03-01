@@ -1,9 +1,5 @@
-Welcome to SourceLair!
+A web application created for the IT4Gov competition.
 
-Please read the following instructions in order start working frictionlessly in SourceLair:
+You can check it out at [usa1m693.apps.lair.io](https://usa1m693.apps.lair.io).
 
-1. Customize your settings using .editorconfig
-2. Install your packages using bower.json from your file explorer
-3. Open your index.html and start coding
 
-Don't forget to contact us at support@sourcelair.com for any questions.

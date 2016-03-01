@@ -65,7 +65,7 @@ function readtk() {
     window.frames[0].document.body.innerHTML = "Δεν μπορεί να εμφανιστεί ο χάρτης καθώς δεν έχετε επιλέξει ΤΚ της έδρας της εταιρείας στην 'Φόρμα στοιχείων'.";
   }
   else if (x === "15772"){
-    document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=OΑΕΕ+Σύνταγμα&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+    document.getElementById('fred').src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmeTQ5Ti9oRQRNqRsnDOHHs0&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
   }
   else if (x === "16342") {
     document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΟΑΕΕ+ΔΑΦΝΗΣ&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";

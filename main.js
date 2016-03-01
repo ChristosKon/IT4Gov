@@ -55,7 +55,30 @@ function submitlocForm() {
 }
 
 function submitomoForm() {
+  var edra = document.getElementById('edra').value;
+  var etairos= document.getElementById('etairos').value;
+  var foreign = document.getElementById('foreign').value;
 
+  localStorage.setItem("edra", edra);
+  localStorage.setItem("etairos", etairos);
+  localStorage.setItem("foreign", foreign);
+}
+
+function readomo() {
+  document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Εμπορικό+και+Βιομηχανικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
+  var x = localStorage.getItem("etairos");
+  var y = localStorage.getItem("foreign");
+
+  if (x === "ΟΕ") {
+    document.getElementById("but-et").style.display= '';
+  }
+  else if (x === "ΑΕ") {
+    document.getElementById("but-et2").style.display= '';
+  }
+
+  if (y === "ΝΑΙ"){
+    document.getElementById("for-et").style.display= '';
+  }
 }
 
 function readloc() {
@@ -78,10 +101,6 @@ function readtk() {
 
 function readepimelitirio() {
   document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Επαγγελματικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
-}
-
-function readgemh() {
-  document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=Εμπορικό+και+Βιομηχανικό+Επιμελητήριο+Αθηνών&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";
 }
 
 function normalizeGreek(text) {

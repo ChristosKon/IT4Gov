@@ -321,6 +321,9 @@ input[type=file] {
 		margin-top: 10px;
 		content: center;
 	}
+	h1 {
+		font-size: 28px;
+	}
 	.col-md-6 {
 		margin-top: 10px;
 	}

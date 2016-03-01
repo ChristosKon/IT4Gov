@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript">
 			window.onload = function(){
-				readgemh();
+				readomo();
 			}
 		</script>
 		<title>Ομόρρυθμη Εταιρεία - Βήμα 1</title>
@@ -35,7 +35,7 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row">
-				<h1 class="maintitle"> ΥΜΣ - Δικαιολογητικά</h1>
+				<h1 class="maintitle"> ΟΕ μέσω Υπηρεσία μιας Στασης - Δικαιολογητικά</h1>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
@@ -50,7 +50,9 @@
 						<button class="dik" onclick="myFunction(8)"> Εξουσιοδότηση εκπροσώπων</button><br>
 						<button class="dik" onclick="myFunction(9)"> Εντολή σύστασης</button><br>
 						<button class="dik" onclick="myFunction(10)"> Εγγραφή στο Επιμελητήριο</button><br>
-						<br>
+						<button class="dik" id="but-et" data-mitch="but-et" onclick="myFunction(11)" style="display:none;"> Νομικό πρόσωπο</button>
+						<button class="dik" id="but-et2" data-mitch="but-et2" onclick="myFunction(12)" style="display:none;"> Νομικό πρόσωπο</button><br>
+						<button class="dik" id="for-et" data-mitch="but-et" onclick="myFunction(13)" style="display:none;"> Αλλοδαπό νομικό πρόσωπο</button><br>
 					</div>
 				</div>
 				<div class="col-md-4 step-content">
@@ -91,6 +93,15 @@
 					</div>
 					<div id="10" style="display:none;">
 						<p>Αίτηση Νομικού προσώπου για την εγγραφή στο Επιμελητήριο. <a href="http://www.eea.gr/system/uploads/asset/data/148/YMS_aitisi-eggr-etaireia-np.pdf" target="_blank">Αίτηση Εγγραφής</a>.</p>
+					</div>
+					<div id="11" style="display:none;">
+						<p>κειμενο ρε <a href="http://www.eea.gr/system/uploads/asset/data/148/YMS_aitisi-eggr-etaireia-np.pdf" target="_blank">Αίτηση Εγγραφής</a>.</p>
+					</div>
+					<div id="12" style="display:none;">
+						<p>κειμενο ρε 2<a href="http://www.eea.gr/system/uploads/asset/data/148/YMS_aitisi-eggr-etaireia-np.pdf" target="_blank">Αίτηση Εγγραφής</a>.</p>
+					</div>
+					<div id="13" style="display:none;">
+						<p>κειμενο ρε αλλοδαπος<a href="http://www.eea.gr/system/uploads/asset/data/148/YMS_aitisi-eggr-etaireia-np.pdf" target="_blank">Αίτηση Εγγραφής</a>.</p>
 					</div>
 				</div>
 				<div class="col-md-4">

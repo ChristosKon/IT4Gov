@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="main.css"/>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="main.js"></script>
+		<title>Ανεβάστε τα αρχεία σας</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						Υπουργείο Εσωτερικών και <br> Διοικητικής Ανασυγκρότησης
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right home-contact">
+						<li><a href="terms.html">Όροι και Προϋποθέσεις</a></li>
+						<li><a href="contact.html">Επικοινωνία</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="container-fluid" style="text-align:center;">
+				<h1 class="maintitle">Tα αρχεία σας ανέβηκαν με επιτυχία</h1>
+				<h4>
+					<p>Ο αριθμός πρωτοκόλλου σας είναι:</p>
+				</h4>
+				<div id="proto" class="proto-number"></div>
+				<div class="email-text">
+					Δηλώστε το email σας εάν θέλετε να σας σταλεί ο αριθμός πρωτοκόλλου και ηλεκτρονικά.
+				</div>
+				<form onsubmit="return myalert()" action="">
+					Email:
+					<input type="text" name="email" value="">
+					<input class="upload-button" type="submit" value="Αποστολή">
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			.
+		</div>
+		<div class="row">
+			<div class="go-next-step">
+				<p>
+					<a href="omorithmi-upload.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				randnumb();
+			}
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

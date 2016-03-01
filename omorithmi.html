@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="main.css"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				readomo();
+			}
+		</script>
+		<title>Ομόρρυθμη Εταιρεία - Βήμα 1</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						Υπουργείο Εσωτερικών και <br> Διοικητικής Ανασυγκρότησης
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right home-contact">
+						<li><a href="contact.html">Επικοινωνία</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="row">
+				<h1 class="maintitle"> ΟΕ μέσω Υπηρεσία μιας Στασης - Δικαιολογητικά</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="step1">
+						<button class="dik" onclick="myFunction(1)"> Καταστατικό </button><br>
+						<button class="dik-edras" onclick="myFunction(2)"> Δικαιολογητικά Έδρας </button><br>
+						<button class="dik" onclick="myFunction(3)"> Αστυνομική ταυτότητα</button><br>
+						<button class="dik" onclick="myFunction(4)"> Δήλωση Έναρξης</button><br>
+						<button class="dik" onclick="myFunction(5)"> Δήλωση δραστηριοτήτων</button><br>
+						<button class="dik" onclick="myFunction(6)"> Δήλωση σχέσεων</button><br>
+						<button class="dik" onclick="myFunction(7)"> Δήλωση μελών</button><br>
+						<button class="dik" onclick="myFunction(8)"> Εξουσιοδότηση εκπροσώπων</button><br>
+						<button class="dik" onclick="myFunction(9)"> Εντολή σύστασης</button><br>
+						<button class="dik" onclick="myFunction(10)"> Εγγραφή στο Επιμελητήριο</button><br>
+						<button class="dik" id="but-et" data-mitch="but-et" onclick="myFunction(11)" style="display:none;"> Νομικό πρόσωπο</button>
+						<button class="dik" id="but-et2" data-mitch="but-et2" onclick="myFunction(12)" style="display:none;"> Νομικό πρόσωπο</button><br>
+						<button class="dik" id="for-et" data-mitch="but-et" onclick="myFunction(13)" style="display:none;"> Αλλοδαπό νομικό πρόσωπο</button><br>
+					</div>
+				</div>
+				<div class="col-md-4 step-content">
+					<div class="step1-content">
+						<div id="1">
+							<p>Καταστατικό υπογεγραμμένο από τους ιδρυτές της Εταιρείας σε πρωτότυπη μορφή.</p>
+						</div>
+						<div id="2" style="display:none;">
+									<p id="edra-yours" style="display:none;">
+										Δύο απλά φωτοαντίγραφα του Ε9 όπου έχει δηλωθεί η κατοικία.
+							</p>
+									<p id="edra-dorean" style="display:none;">Αν ο γονέας σας παραχωρεί μέρος της ιδιόκτητης κατοικίας του:  Υπεύθυνη Δήλωση του Ν. 1599/86 του γονέα, εις διπλούν, επικυρωμένες από ΚΕΠ ή Αστυνομικό Τμήμα και δύο  απλά φωτοαντίγραφα του  Ε9 όπου  έχει  δηλωθεί η κατοικία.
+									</p>
+									<p id="edra-enoikio" style="display:none;">Αν νοικιάζετε: Δύο φωτοαντίγραφα του μισθωτηρίου συμβολαίου, θεωρημένα από την εφορία.</p>
+						</div>
+						<div id="3" style="display:none;">
+							<p>Αστυνομική ταυτότητα για Έλληνες υπηκόους, ταυτότητα ή διαβατήριο για υπηκόους κράτους μέλους της Ε.Ε, διαβατήριο για υπηκόους κρατών εκτός Ε.Ε καθώς και άδεια διαμονής, εφόσον διαμένουν στη χώρα, σε επικυρωμένα φωτοτυπικά αντίγραφα.</p>
+						</div>
+						<div id="4" style="display:none;">
+							<p>Δήλωση Έναρξης/Μεταβολής Εργασιών Μη Φυσικού Προσώπου <a href="http://www.eea.gr/system/uploads/asset/data/144/M3.pdf" target="_blank">M3</a>.</p>
+						</div>
+						<div id="5" style="display:none;">
+							<p>Δήλωση Δραστηριοτήτων Επιχείρησης όπου απαιτείται<a href="http://www.eea.gr/system/uploads/asset/data/145/M6.pdf" target="_blank"> M6</a>.</p>
+						</div>
+						<div id="6" style="display:none;">
+							<p>Δήλωση Σχέσεων Φορολογουμένου <a href="http://www.eea.gr/system/uploads/asset/data/146/M7.pdf" target="_blank">M7</a>.</p>
+						</div>
+						<div id="7" style="display:none;">
+							<p>Δήλωση Μελών Μη Φυσικού Προσώπου <a href="http://www.eea.gr/system/uploads/asset/data/147/M8.pdf" target="_blank">M8</a>.</p>
+						</div>
+						<div id="8" style="display:none;">
+							<ul>
+								<li><p>Εφόσον η διαδικασία σύστασης γίνεται με εκπρόσωπο, συμπληρώνεται υποχρεωτικά από όλους τους εταίρους, θεωρώντας το γνήσιο της υπογραφής τους <a href="http://www.eea.gr/system/uploads/asset/data/153/YMS_YPODEIGMA_1-1.pdf" target="_blank">Υπόδειγμα 1 Παράρτημα 1</a>.</p></li>
+								<li>Εφόσον στην Υ.Μ.Σ προσέλθουν όλοι οι Ιδρυτές, δηλώνεται εγγράφως ένας εξ' αυτών ως εκπρόσωπος, συμπληρώνοντας και υπογράφοντας όλοι οι εκπρόσωποι <a href="http://www.eea.gr/system/uploads/asset/data/154/YMS_YPODEIGMA_1-5.pdf" target="_blank">Υπόδειγμα 5 Παράρτημα 1</a>.</li>
+							</ul>
+						</div>
+						<div id="9" style="display:none;">Εντολή - Υπεύθυνη Δήλωση των Ιδρυτών ή του Εκπροσώπου για τη Σύσταση προσωπικής Εταιρείας (<a href="http://www.eea.gr/system/uploads/asset/data/151/YMS_YPODEIGMA_1-3.pdf" target="_blank">Υπόδειγμα 3 Παράρτημα 1</a>).</div>
+					</div>
+					<div id="10" style="display:none;">
+						<p>Αίτηση Νομικού προσώπου για την εγγραφή στο Επιμελητήριο. <a href="http://www.eea.gr/system/uploads/asset/data/148/YMS_aitisi-eggr-etaireia-np.pdf" target="_blank">Αίτηση Εγγραφής</a>.</p>
+					</div>
+					<div id="11" style="display:none;">
+						<p>ΓΙΑ ΝΟΜΙΚΑ ΠΡΟΣΩΠΑ ΑΠΑΙΤΟΥΝΤΑΙ ΕΠΙΠΛΕΟΝ ΤΑ ΠΑΡΑΚΑΤΩ ΕΓΓΡΑΦΑ ΕΑΝ ΕΙΝΑΙ ΕΤΑΙΡΟΣ ΟΕ, ΕΕ, ΕΠΕ:</p>
+						<ul>
+							<li>
+								<p>Ακριβές αντίγραφο καταστατικού σύστασης</p>
+							</li>
+							<li>
+								<p>Τροποποιημένο τελευταίο καταστατικό</p>
+							</li>
+							<li>
+								<p>Φορολογική ενημερότητα για την εταιρεία</p>
+							</li>
+							<li>
+								<p>Για τις ΕΠΕ χρειάζεται πρακτικό ότι η εταιρεία θα συμμετέχει στην υπό σύσταση εταιρεία</p>
+							</li>
+							<li>
+								<p>Εφόσον ο εκπρόσωπος για την σύσταση της εταιρείας είναι πρόσωπο διαφορετικό από το νόμιμο εκπρόσωπο, χρειάζεται εξουσιοδοτηση που φέρει το γνήσιο της υπογραφής από το νόμιμο εκπρόσωπο της εταιρείας</p>
+							</li>
+						</ul>
+					</div>
+					<div id="12" style="display:none;">
+						<p>ΓΙΑ ΝΟΜΙΚΑ ΠΡΟΣΩΠΑ ΑΠΑΙΤΟΥΝΤΑΙ ΕΠΙΠΛΕΟΝ ΤΑ ΠΑΡΑΚΑΤΩ ΕΓΓΡΑΦΑ ΕΑΝ ΕΙΝΑΙ ΕΤΑΙΡΟΣ AE:</p>
+						<ul>
+							<li>
+								<p>ΦΕΚ σύστασης</p>
+							</li>
+							<li>
+								<p>ΦΕΚ τελευταίου Διοικητικού Συμβουλίου.</p>
+							</li>
+							<li>
+								<p>ΦΕΚ από τα οποία προκύπτει η νόμιμη εκπροσώπηση</p>
+							</li>
+							<li>
+								<p>Πρακτικό Διοικητικού Συμβουλίου για την συμμετοχή της ΑΕ στην υπό σύσταση εταιρεία</p>
+							</li>
+							<li>
+								<p>Φορολογική ενημερότητα για την εταιρεία</p>
+							</li>
+						</ul>
+					</div>
+					<div id="13" style="display:none;">
+						<p>ΓΙΑ ΕΤΑΙΡΕΙΑ ΜΕ ΑΛΛΟΔΑΠΟ ΝΟΜΙΚΟ ΠΡΟΣΩΠΟ:</p>
+						<ul>
+							<li>
+								<p>Καταστατικό που φέρει σφραγίδα σύμφωνα με το <a href="http://www.acci.gr/acci/Portals/0/Departments/YMS/Hagi.doc" target="_blank">άρθρο 4 της σύμβασης της Χάγης</a> (apostille),  επίσημα μεταφρασμένο από το Υπουργείο Εξωτερικών ή εφόσον η χώρα προέλευσης δεν έχει προσχωρήσει στην ανωτέρω σύμβαση, θεωρημένο από προξενική αρχή</p>
+							</li>
+							<li>
+								<p>Επικυρωμένο αντίγραφο του εγγράφου πληρεξουσιότητας για το διορισμό νομίμου εκπροσώπου ή αντιπροσώπου του στην Ελλάδα με διαδικασία apostille</p>
+							</li>
+							<li>
+								<p>Πιστοποιητικό αρμόδιας αρχής της  χώρας έδρας  του Νομικού Προσώπου για την ύπαρξη της Εταιρείας (Good standing), με διαδικασία apostille</p>
+							</li>
+							<li>
+								<p>
+									Σημείωση:
+Σε περίπτωση που στο καταστατικό ΔΕΝ αναφέρεται, η έδρα της επιχείρησης  ή αν δεν ισχύει πια, προσκομίζετε ξεχωριστό πρόσφατο πιστοποιητικό έδρας με Apostille.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="map">
+						<iframe id="fred" width="200" height="200"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="go-next-step">
+					<p>
+						<a href="omorithmi-location.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+						<a href="omorithmi-upload.html" class="btn next-step">ΕΠΟΜΕΝΟ ΒΗΜΑ</a></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

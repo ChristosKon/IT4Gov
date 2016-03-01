@@ -54,6 +54,10 @@ function submitlocForm() {
   }
 }
 
+function submitomoForm() {
+
+}
+
 function readloc() {
   var x = localStorage.getItem("address-results");
   document.getElementById('fred').src="https://www.google.com/maps/embed/v1/search?q=ΔΟΥ+"+x+"&key=AIzaSyAs-ZgYpm0l6PrMBlOpr4q916rERKqzO4I";

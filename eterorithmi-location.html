@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="bower_components/chosen/chosen.min.css" />
+		<link rel="stylesheet" href="main.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="bower_components/jquery-csv/src/jquery.csv.js"></script>
+		<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<title>Ετερόρρυθμη - Στοιχεία</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						Υπουργείο Εσωτερικών και <br> Διοικητικής Ανασυγκρότησης
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right home-contact">
+						<li><a href="contact.html">Επικοινωνία</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="row" style="text-align:center;">
+				<h1 class="maintitle"> Συμπληρώστε τα παρακάτω στοιχεία</h1></div>
+			<div class="row" style="text-align:center;">
+				<div class="col-md-12">
+					<div class="edra">
+					<p>Η έδρα της εταιρείας θα είναι:</p>
+						<select name="edra" id="edra" style="width:300px;" data-placeholder="Ιδιοκτησία έδρας">
+							<option value="none"></option>
+							<option value="ΙΔΙΟΚΤΗΤΟ"> Σε ιδιόκτητο χώρο/κτήριο</option>
+							<option value="ΔΩΡΕΑΝ"> Σε χώρο που μου έχουν παραχωρήσει δωρεάν</option>
+							<option value="ΕΝΟΙΚΙΟ"> Σε χώρο τον οποίο νοικιάζω</option>
+						</select>
+					</div>
+					<div class="etairos">
+					<p>Συμμετέχει κάποιο νομικό πρόσωπο το οποίο είναι έταιρος σε μια από τις παρακάτω κατηγορίες;</p>
+						<select name="etairos" id="etairos" style="width:300px;" data-placeholder="Μορφή Εταιρείας">
+							<option value="none"></option>
+							<option value="ΟΧΙ">ΟΧΙ</option>
+							<option value="ΟΕ"> ΟΕ, ΕΕ ή ΕΠΕ </option>
+							<option value="ΑΕ"> ΑΕ</option>
+						</select>
+					</div>
+					<div class="foreign">
+					<p>Συμμετέχει κάποιο αλλοδαπό νομικό πρόσωπο;</p>
+						<select name="foreign" id="foreign" style="width:300px;" data-placeholder="Ναι / Όχι">
+							<option value="none"></option>
+							<option value="ΝΑΙ"> ΝΑΙ</option>
+							<option value="ΟΧΙ"> ΟΧΙ</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<form name="locForm" action="eterorithmi.html"
+						onsubmit="return submitomoForm()">
+				<div class="row" style="text-align:center;">
+				</div>
+				<div class="row">
+					<div class="go-next-step">
+						<a href="business-type.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+						<input type="submit" value="ΕΠΟΜΕΝΟ ΒΗΜΑ" class="btn next-step">
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script>
+			$('#edra').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+			$('#etairos').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+			$('#foreign').chosen({disable_search_threshold: 20, no_results_text: "Δεν βρέθηκαν αποτέλεσματα!"});
+		</script>
+	</body>
+</html>

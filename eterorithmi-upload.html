@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="main.css"/>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="main.js"></script>
+		<title>Ανεβάστε τα αρχεία σας</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						Υπουργείο Εσωτερικών και <br> Διοικητικής Ανασυγκρότησης
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="sm-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right home-contact">
+						<li><a href="contact.html">Επικοινωνία</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="container-fluid" style="text-align:center;">
+				<h1 class="maintitle">Ανεβάστε τα αρχεία σας</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="upload-form">
+				<form onsubmit="return no_upload()" action="eterorithmi-200.html">
+					<input type="file" name="pic" accept="image/*">
+					<input class="btn btn-primary btn-md upload-button" type="submit" value="Ανέβασμα">
+				</form>
+			</div>
+		</div>
+		<div class="row">
+				<div class="go-next-step">
+					<p>
+						<a href="eterorithmi.html" class="btn previous-step">ΠΡΟΗΓΟΥΜΕΝΟ ΒΗΜΑ</a>
+					</p>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
